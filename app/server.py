@@ -11,7 +11,7 @@ import uvicorn, aiohttp, asyncio
 import base64, sys, numpy as np
 
 path = Path(__file__).parent
-print (path)
+print (type(path))
 model_file_url = 'https://www.dropbox.com/s/dk1z9ym2s19cpur/last4_vgg_face_cattle.h5?dl=1'
 model_file_name = 'last4_vgg_face_cattle'
 
