@@ -11,6 +11,7 @@ import uvicorn, aiohttp, asyncio
 import base64, sys, numpy as np
 
 path = Path(__file__).parent
+print (path)
 model_file_url = 'https://www.dropbox.com/s/dk1z9ym2s19cpur/last4_vgg_face_cattle.h5?dl=1'
 model_file_name = 'last4_vgg_face_cattle'
 
@@ -19,6 +20,7 @@ app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Reques
 app.mount('/static', StaticFiles(directory='app/static'))
 
 MODEL_PATH = path/'models'/f'{model_file_name}.h5'
+print (MODEL_PATH+'gggggggggggggggggggggggggggggggggggggggggggg')
 IMG_FILE_SRC = '/tmp/saved_image.png'
 
 async def download_file(url, dest):
@@ -45,7 +47,7 @@ loop.close()
 @app.route("/upload", methods=["POST"])
 async def upload(request):
     data = await request.form()
-    print (data)
+    print (str(data)+'gggggggggggggggggggggggggggggggggggggggggggg')
     img_bytes = await (data["file"].read())
     bytes = base64.b64decode(img_bytes)
     with open(IMG_FILE_SRC, 'wb') as f: f.write(bytes)
