@@ -11,7 +11,7 @@ import uvicorn, aiohttp, asyncio
 import base64, sys, numpy as np
 
 path = Path(__file__).parent
-model_file_url = 'YOUR MODEL.h5 DIRECT / RAW DOWNLOAD URL HERE!'
+model_file_url = 'https://www.dropbox.com/s/dk1z9ym2s19cpur/last4_vgg_face_cattle.h5?dl=0'
 model_file_name = 'model'
 
 app = Starlette()
