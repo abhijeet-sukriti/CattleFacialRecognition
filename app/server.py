@@ -20,7 +20,7 @@ app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Reques
 app.mount('/static', StaticFiles(directory='app/static'))
 
 MODEL_PATH = path/'models'/f'{model_file_name}.h5'
-print (MODEL_PATH+'gggggggggggggggggggggggggggggggggggggggggggg')
+print (MODEL_PATH)
 IMG_FILE_SRC = '/tmp/saved_image.png'
 
 async def download_file(url, dest):
@@ -47,7 +47,7 @@ loop.close()
 @app.route("/upload", methods=["POST"])
 async def upload(request):
     data = await request.form()
-    print (str(data)+'gggggggggggggggggggggggggggggggggggggggggggg')
+    print (str(data))
     img_bytes = await (data["file"].read())
     bytes = base64.b64decode(img_bytes)
     with open(IMG_FILE_SRC, 'wb') as f: f.write(bytes)
