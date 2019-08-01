@@ -33,7 +33,7 @@ async def download_file(url, dest):
 async def setup_model():
     #UNCOMMENT HERE FOR CUSTOM TRAINED MODEL
     await download_file(model_file_url, MODEL_PATH)
-    model = load_model(MODEL_PATH) # Load your Custom trained model
+    model = load_model(str(MODEL_PATH)) # Load your Custom trained model
     model._make_predict_function()
     #model = ResNet50(weights='imagenet') # COMMENT, IF you have Custom trained model
     return model
